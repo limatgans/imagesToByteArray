@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-input logo-l">
+            <label>Logo
+                <i data-toggle="tooltip"
+                    title="Full form of the company logo. The minimum width of image should be 500px."
+                    class="far fa-question-circle help"></i>
+            </label>
+            <p>
+                <img if.bind="longFileFormat" alt="logo" src="${longFileFormat},${longFileLink}" />
+                <img else alt="logo" src="../assets/images/logo-mq-l.png" />
+            </p>
+            <input type="file" onchange="handleFiles(this.files)" name="file-logo-l" id="file-logo-l" class="inputfile" />
+            <label for="file-logo-l">
+                <span>Change logo</span>
+            </label>
+            <label for="file-logo-l">
+                <span onclick="longLogo()">Upload logo</span>
+            </label>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-input logo-s">
+            <label>Logo (Short)
+                <i data-toggle="tooltip" title="The minimum size of image is 120px x 120px."
+                    class="far fa-question-circle help"></i>
+            </label>
+            <p>
+                <img if.bind="shortFileFromat" alt="logo(short)" src="${shortFileFromat},${shortFileLink}" />
+                <img else alt="logo(short)" src="../assets/images/logo-client-s.png" />
+            </p>
+            <input type="file" name="file-logo-s" id="file-logo-s" class="inputfile" />
+            <label for="file-logo-s">
+                <span id="editor">Change logo</span>
+            </label>
+            <label for="file-logo-s">
+                <span onclick="shortLogo()">Upload logo</span>
+            </label>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="./general-settings.js"></script>
